@@ -1,0 +1,233 @@
+fileFormatVersion: 2
+guid: bb676411bdcf5024d90992293e485c41
+timeCreated: 1520995724
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Body
+    100002: Character1_LeftToeBase
+    100004: Character1_LeftToeBase_end
+    100006: Character1_LeftToeBase_end_end
+    100008: Character1_RightToeBase
+    100010: Character1_RightToeBase_end
+    100012: Character1_RightToeBase_end_end
+    100014: //RootNode
+    100016: Chito
+    100018: Chito_Head
+    100020: Chito_Head_end
+    100022: Chito_Head_end_end
+    100024: Chito_Hips
+    100026: Chito_LeftArm
+    100028: Chito_LeftFoot
+    100030: Chito_LeftForeArm
+    100032: Chito_LeftHand
+    100034: Chito_LeftHand_end
+    100036: Chito_LeftLeg
+    100038: Chito_LeftLeg.002
+    100040: Chito_LeftLeg.002_end
+    100042: Chito_LeftShoulder
+    100044: Chito_LeftUpLeg
+    100046: Chito_Neck
+    100048: Chito_Ref
+    100050: Chito_RightArm
+    100052: Chito_RightFoot
+    100054: Chito_RightForeArm
+    100056: Chito_RightHand
+    100058: Chito_RightHand_end
+    100060: Chito_RightLeg
+    100062: Chito_RightLeg.002
+    100064: Chito_RightLeg.002_end
+    100066: Chito_RightShoulder
+    100068: Chito_RightUpLeg
+    100070: Chito_Spine
+    100072: Chito_Spine1
+    100074: Chito_Spine2
+    100076: Collar
+    100078: Feet
+    100080: Hair
+    100082: Hands
+    100084: Hat
+    100086: Head
+    100088: Hood
+    400000: Body
+    400002: Character1_LeftToeBase
+    400004: Character1_LeftToeBase_end
+    400006: Character1_LeftToeBase_end_end
+    400008: Character1_RightToeBase
+    400010: Character1_RightToeBase_end
+    400012: Character1_RightToeBase_end_end
+    400014: Chito
+    400016: //RootNode
+    400018: Chito_Head
+    400020: Chito_Head_end
+    400022: Chito_Head_end_end
+    400024: Chito_Hips
+    400026: Chito_LeftArm
+    400028: Chito_LeftFoot
+    400030: Chito_LeftForeArm
+    400032: Chito_LeftHand
+    400034: Chito_LeftHand_end
+    400036: Chito_LeftLeg
+    400038: Chito_LeftLeg.002
+    400040: Chito_LeftLeg.002_end
+    400042: Chito_LeftShoulder
+    400044: Chito_LeftUpLeg
+    400046: Chito_Neck
+    400048: Chito_Ref
+    400050: Chito_RightArm
+    400052: Chito_RightFoot
+    400054: Chito_RightForeArm
+    400056: Chito_RightHand
+    400058: Chito_RightHand_end
+    400060: Chito_RightLeg
+    400062: Chito_RightLeg.002
+    400064: Chito_RightLeg.002_end
+    400066: Chito_RightShoulder
+    400068: Chito_RightUpLeg
+    400070: Chito_Spine
+    400072: Chito_Spine1
+    400074: Chito_Spine2
+    400076: Collar
+    400078: Feet
+    400080: Hair
+    400082: Hands
+    400084: Hat
+    400086: Head
+    400088: Hood
+    2100000: Shose1
+    2100002: Shose2
+    2100004: Gloves
+    2100006: No Name
+    2100008: Hat
+    2100010: Skin
+    2100012: Cloth
+    2100014: Cloth2
+    2100016: Material
+    2100018: Hair
+    4300000: Feet
+    4300002: Hands
+    4300004: Collar
+    4300006: Hood
+    4300008: Hat
+    4300010: Head
+    4300012: Body
+    4300014: Hair
+    7400000: Chito_Ref|Walking_f
+    9500000: //RootNode
+    13700000: Body
+    13700002: Collar
+    13700004: Feet
+    13700006: Hair
+    13700008: Hands
+    13700010: Hat
+    13700012: Head
+    13700014: Hood
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Chito_Ref|Walking_f
+      takeName: Chito_Ref|Walking_f
+      firstFrame: 1
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
