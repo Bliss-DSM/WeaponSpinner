@@ -384,7 +384,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4836939432835224}
   - component: {fileID: 54264377810780008}
-  - component: {fileID: 59212420934741042}
+  - component: {fileID: 138964409983356116}
   m_Layer: 8
   m_Name: Chito_Spine
   m_TagString: Untagged
@@ -1322,7 +1322,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1114215801662310}
   m_LocalRotation: {x: 0.38268343, y: -0, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 9.85, z: -15}
+  m_LocalPosition: {x: 0, y: 15, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4150758647127566}
@@ -1717,7 +1717,7 @@ Rigidbody:
   m_GameObject: {fileID: 1558692767674270}
   serializedVersion: 2
   m_Mass: 5
-  m_Drag: 20
+  m_Drag: 50
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -1891,40 +1891,6 @@ HingeJoint:
   m_UseLimits: 1
   m_Limits:
     min: -30
-    max: 0
-    bounciness: 0
-    bounceMinVelocity: 0.2
-    contactDistance: 0
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
---- !u!59 &59212420934741042
-HingeJoint:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1425084395917818}
-  m_ConnectedBody: {fileID: 54732029472178292}
-  m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 0, y: 0, z: 1}
-  m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.17954583, y: 0.005048752, z: -0.0006388696}
-  m_UseSpring: 1
-  m_Spring:
-    spring: 200
-    damper: 0
-    targetPosition: 0
-  m_UseMotor: 0
-  m_Motor:
-    targetVelocity: 0
-    force: 0
-    freeSpin: 0
-  m_UseLimits: 1
-  m_Limits:
-    min: 0
     max: 0
     bounciness: 0
     bounceMinVelocity: 0.2
@@ -2393,10 +2359,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be062893bc36bb340ba0f54bd6f63fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  move_speed: 50
+  move_speed: 30
   look_speed: 3
   p_rigidbody: {fileID: 0}
-  p_camera: {fileID: 0}
+  p_camera: {fileID: 20685071093212480}
 --- !u!114 &114763910605602424
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3075,6 +3041,19 @@ FixedJoint:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1551113057729456}
   m_ConnectedBody: {fileID: 54643669804600454}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
+--- !u!138 &138964409983356116
+FixedJoint:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1425084395917818}
+  m_ConnectedBody: {fileID: 54732029472178292}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0

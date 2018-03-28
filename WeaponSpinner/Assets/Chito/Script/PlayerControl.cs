@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour {
 
-    public float move_speed = 10;
-    public float look_speed = 1;
+    public float move_speed = 30;
+    public float look_speed = 3;
 
     public Rigidbody p_rigidbody;
 
