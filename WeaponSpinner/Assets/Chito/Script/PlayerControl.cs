@@ -9,8 +9,6 @@ public class PlayerControl : MonoBehaviour {
 
     public Rigidbody p_rigidbody;
 
-    public Camera p_camera;
-
     Vector3 targetPosition;
     Vector3 lookPosition;
 
@@ -31,17 +29,8 @@ public class PlayerControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         Walk();
-        Look();
     }
-
-    void Look()
-    {
-        lookPosition = Camera.main.transform.forward;
-        lookPosition.y = 0;
-        transform.rotation = Quaternion.Lerp(transform.rotation,
-            Quaternion.LookRotation(lookPosition), Time.fixedDeltaTime * look_speed);
-    }
-
+    
     void Walk()
     {
         if (Input.anyKey)
@@ -49,22 +38,22 @@ public class PlayerControl : MonoBehaviour {
             targetPosition = Vector3.zero;
             if (Input.GetKey(KeyCode.W))
             {
-                targetPosition += Camera.main.transform.forward;
+                targetPosition += Vector3.forward;
                 anim.SetBool("isWalking", true);
             }
             if (Input.GetKey(KeyCode.S))
             {
-                targetPosition += Camera.main.transform.forward * -1;
+                targetPosition += Vector3.forward * -1;
                 anim.SetBool("isWalking", true);
             }
             if (Input.GetKey(KeyCode.A))
             {
-                targetPosition += Camera.main.transform.right * -1;
+                targetPosition += Vector3.right * -1;
                 anim.SetBool("isWalking", true);
             }
             if (Input.GetKey(KeyCode.D))
             {
-                targetPosition += Camera.main.transform.right;
+                targetPosition += Vector3.right;
                 anim.SetBool("isWalking", true);
             }
 
@@ -72,9 +61,12 @@ public class PlayerControl : MonoBehaviour {
             //transform.position += targetPosition * move_speed * Time.deltaTime;
             p_rigidbody.AddForce(targetPosition * move_speed, ForceMode.Impulse);
 
-            if (Input.GetKey(KeyCode.Space))
+            transform.rotation = Quaternion.Lerp(transform.rotation,
+            Quaternion.LookRotation(targetPosition), Time.fixedDeltaTime * look_speed);
+
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                p_rigidbody.AddForce(Vector3.up * 25, ForceMode.Impulse);
+                p_rigidbody.AddForce(Vector3.up * 1000, ForceMode.Impulse);
             }
         }
         else

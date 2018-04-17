@@ -4,6 +4,25 @@ using UnityEngine;
 
 public class CameraControl : MonoBehaviour
 {
+    public GameObject target;
+    public Vector3 distance;
+
+    private Vector3 Old_Pos;
+
+    private void Awake()
+    {
+        distance = this.transform.position - target.transform.position;
+    }
+
+    private void LateUpdate()
+    {
+        this.transform.position = Vector3.Lerp(this.transform.position, target.transform.position + distance, 1);
+    }
+}
+
+/*
+public class CameraControl : MonoBehaviour
+{
     private const float Y_ANGLE_MIN = 0.0f;
     private const float Y_ANGLE_MAX = 50.0f;
 
@@ -36,3 +55,4 @@ public class CameraControl : MonoBehaviour
         camTransform.LookAt(lookAt.position);
     }
 }
+*/
