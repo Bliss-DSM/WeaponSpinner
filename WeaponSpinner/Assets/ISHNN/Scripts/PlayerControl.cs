@@ -4,29 +4,22 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour {
 
-    public float move_speed = 30;
-    public float look_speed = 3;
+    [SerializeField]private float move_speed = 30; //이동속도
+    [SerializeField]private float look_speed = 3;  //선회속도
+    [SerializeField] private float jump_power = 5; //점프력
 
-    public Rigidbody p_rigidbody;
+    private Rigidbody p_rigidbody;
+    private Animator anim;
 
-    Vector3 targetPosition;
-    Vector3 lookPosition;
-
-    Animator anim;
-
+    private Vector3 targetPosition;
+    private Vector3 lookPosition;
 
     private void Awake()
     {
         p_rigidbody = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
     }
-
-    // Use this for initialization
-    void Start () {
-		
-	}
 	
-	// Update is called once per frame
 	void Update () {
         Walk();
     }
@@ -35,6 +28,7 @@ public class PlayerControl : MonoBehaviour {
     {
         if (Input.anyKey)
         {
+            //키보드 입력 받고 타겟 포지션 선정
             targetPosition = Vector3.zero;
             if (Input.GetKey(KeyCode.W))
             {
@@ -56,17 +50,20 @@ public class PlayerControl : MonoBehaviour {
                 targetPosition += Vector3.right;
                 anim.SetBool("isWalking", true);
             }
-
             targetPosition.y = 0;
+
+            //포지션으로 이동
             //transform.position += targetPosition * move_speed * Time.deltaTime;
             p_rigidbody.AddForce(targetPosition * move_speed, ForceMode.Impulse);
 
+            //타겟 포지션 쪽으로 천천히 선회
             transform.rotation = Quaternion.Lerp(transform.rotation,
             Quaternion.LookRotation(targetPosition), Time.fixedDeltaTime * look_speed);
 
+            //점프
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                p_rigidbody.AddForce(Vector3.up * 1000, ForceMode.Impulse);
+                p_rigidbody.AddForce(Vector3.up * jump_power, ForceMode.Impulse);
             }
         }
         else
