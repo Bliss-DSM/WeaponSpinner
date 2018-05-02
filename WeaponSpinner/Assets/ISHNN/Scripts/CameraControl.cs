@@ -16,7 +16,7 @@ public class CameraControl : MonoBehaviour
 
     private void LateUpdate()
     {
-        this.transform.position = Vector3.Lerp(this.transform.position, target.transform.position + distance, 1);
+        this.transform.position = Vector3.Lerp(this.transform.position, target.transform.position + distance, 1f);
     }
 }
 
@@ -28,7 +28,7 @@ public class CameraControl : MonoBehaviour
 
     public Transform lookAt;
     public Transform camTransform;
-    public float distance = 20.0f;
+    public float distance = 20.0f;~
 
     private float currentX = 0.0f;
     private float currentY = 30.0f;

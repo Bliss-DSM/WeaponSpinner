@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour {
 
-    [SerializeField]private float move_speed = 30; //이동속도
-    [SerializeField]private float look_speed = 3;  //선회속도
-    [SerializeField] private float jump_power = 5; //점프력
+    [SerializeField]private float move_speed = 1; //이동속도
+    [SerializeField]private float look_speed = 0.2f;  //선회속도
+    [SerializeField] private float jump_power = 10; //점프력
 
     private Rigidbody p_rigidbody;
     private Animator anim;
-
-    private Vector3 targetPosition;
-    private Vector3 lookPosition;
 
     private void Awake()
     {
@@ -20,55 +17,40 @@ public class PlayerControl : MonoBehaviour {
         anim = GetComponent<Animator>();
     }
 	
-	void Update () {
-        Walk();
+	private void Update () {
+        Control();
+    }
+
+    private void Control()
+    {
+        if (Input.GetKey(KeyCode.W))
+            Walk(Vector3.forward);
+        if (Input.GetKey(KeyCode.S))
+            Walk(Vector3.back);
+        if (Input.GetKey(KeyCode.A))
+            Walk(Vector3.left);
+        if (Input.GetKey(KeyCode.D))
+            Walk(Vector3.right);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Jump();
+        }
     }
     
-    void Walk()
+    public void Walk(Vector3 TargetPos)
     {
-        if (Input.anyKey)
-        {
-            //키보드 입력 받고 타겟 포지션 선정
-            targetPosition = Vector3.zero;
-            if (Input.GetKey(KeyCode.W))
-            {
-                targetPosition += Vector3.forward;
-                anim.SetBool("isWalking", true);
-            }
-            if (Input.GetKey(KeyCode.S))
-            {
-                targetPosition += Vector3.forward * -1;
-                anim.SetBool("isWalking", true);
-            }
-            if (Input.GetKey(KeyCode.A))
-            {
-                targetPosition += Vector3.right * -1;
-                anim.SetBool("isWalking", true);
-            }
-            if (Input.GetKey(KeyCode.D))
-            {
-                targetPosition += Vector3.right;
-                anim.SetBool("isWalking", true);
-            }
-            targetPosition.y = 0;
+        TargetPos.y = 0;
+        //포지션으로 이동
+        p_rigidbody.AddForce(TargetPos * move_speed, ForceMode.VelocityChange);
 
-            //포지션으로 이동
-            //transform.position += targetPosition * move_speed * Time.deltaTime;
-            p_rigidbody.AddForce(targetPosition * move_speed, ForceMode.Impulse);
+        //타겟 포지션 쪽으로 천천히 선회
+        transform.rotation = Quaternion.Lerp(transform.rotation,
+        Quaternion.LookRotation(TargetPos), look_speed);
+    }
 
-            //타겟 포지션 쪽으로 천천히 선회
-            transform.rotation = Quaternion.Lerp(transform.rotation,
-            Quaternion.LookRotation(targetPosition), Time.fixedDeltaTime * look_speed);
-
-            //점프
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                p_rigidbody.AddForce(Vector3.up * jump_power, ForceMode.Impulse);
-            }
-        }
-        else
-        {
-            anim.SetBool("isWalking", false);
-        }
+    public void Jump()
+    {
+        p_rigidbody.AddForce(Vector3.up * jump_power, ForceMode.Impulse);
     }
 }
